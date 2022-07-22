@@ -1,0 +1,10 @@
+{% extends 'mycalendar/base.html' %}
+{% load tz %}
+
+{% block content %}
+{% for tz in timezones %}
+    {{ tz}}: {{ now|timezone:tz}}
+    <hr>
+{% endfor %}
+
+{% endblock %}

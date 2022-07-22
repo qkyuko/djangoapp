@@ -1,0 +1,22 @@
+{% extends 'mycalendar/base.html' %}
+{% block content %}
+<body class="container">
+    <h1 class="display-4 text-primary">
+        {{title}}</h1>
+    <p>以下のレコードを削除します。</p>
+    <table class="table">
+        <tr><th>ID</th><td>{{obj.id}}</td></tr>
+        
+        <form action="{% url 'delete' id %}" method="post">
+        {% csrf_token %}
+        <tr><th></th><td>
+            <input type="submit" value="click"
+                class="btn btn-primary">
+        </td></tr>
+        </form>
+    </table>
+
+    
+    
+</body>
+</html>
